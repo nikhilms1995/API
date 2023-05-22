@@ -40,15 +40,25 @@ steps:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'BuildArtifacts'
 
-- task: SqlAzureDacpacDeployment@1
+# - task: SqlAzureDacpacDeployment@1
+#   inputs:
+#     azureSubscription: 'Free Trial(e3f1c626-1da7-4d18-bec3-ea8498719e07)'
+#     AuthenticationType: 'server'
+#     ServerName: 'sqldb-devops-test.database.windows.net'
+#     DatabaseName: 'Test'
+#     SqlUsername: 'sqladmin'
+#     SqlPassword: 'XRzIovh02TiSHtM'
+#     deployType: 'DacpacTask'
+#     DeploymentAction: 'Publish'
+#     DacpacFile: '$(Build.ArtifactStagingDirectory)/API.dacpac'
+#     IpDetectionMethod: 'AutoDetect'
+- task: SqlDacpacDeploymentOnMachineGroup@0
   inputs:
-    azureSubscription: 'Free Trial(e3f1c626-1da7-4d18-bec3-ea8498719e07)'
-    AuthenticationType: 'server'
-    ServerName: 'sqldb-devops-test.database.windows.net'
-    DatabaseName: 'Test'
-    SqlUsername: 'sqladmin'
-    SqlPassword: 'XRzIovh02TiSHtM'
-    deployType: 'DacpacTask'
-    DeploymentAction: 'Publish'
+    TaskType: 'dacpac'
     DacpacFile: '$(Build.ArtifactStagingDirectory)/API.dacpac'
-    IpDetectionMethod: 'AutoDetect'
+    TargetMethod: 'server'
+    ServerName: 'DESKTOP-AGES7IT'
+    DatabaseName: 'NewDB'
+    AuthScheme: 'sqlServerAuthentication'
+    SqlUsername: 'admin'
+    SqlPassword: 'password'

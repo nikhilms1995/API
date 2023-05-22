@@ -67,5 +67,5 @@ steps:
     TaskType: 'dacpac'
     DacpacFile: '$(Build.ArtifactStagingDirectory)/API.dacpac'
     TargetMethod: 'connectionString'
-    ConnectionString: 'Server=localhost;Database=Fabrikam;User ID=sqluser;Password=password;TrustServerCertificate=True'
+    ConnectionString: 'Server=DESKTOP-AGES7IT;Database=NewDB;User ID=admin;Password=password;TrustServerCertificate=True'
     

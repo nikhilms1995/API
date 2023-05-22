@@ -44,7 +44,7 @@ steps:
   inputs:
     azureSubscription: 'Free Trial(e3f1c626-1da7-4d18-bec3-ea8498719e07)'
     AuthenticationType: 'server'
-    ServerName: 'sqldb-devops-test'
+    ServerName: 'sqldb-devops-test.database.windows.net'
     DatabaseName: 'Test'
     SqlUsername: 'sqladmin'
     SqlPassword: 'XRzIovh02TiSHtM'

@@ -39,7 +39,11 @@ steps:
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'BuildArtifacts'
-
-- script: |
-      cd $(Build.ArtifactStagingDirectory)
-      dir
+- task: SqlDacpacDeploymentOnMachineGroup@0
+  inputs:
+    TaskType: 'dacpac'
+    DacpacFile: '$(Build.ArtifactStagingDirectory)/API.dacpac'
+    TargetMethod: 'server'
+    ServerName: 'DESKTOP-AGES7IT'
+    DatabaseName: 'Test'
+    AuthScheme: 'windowsAuthentication'

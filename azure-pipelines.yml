@@ -31,7 +31,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Move Build Files to Artifacts'
   inputs:
-    sourceFolder: '$(Build.SourcesDirectory)/API/$(buildConfiguration)'
+    sourceFolder: '$(Build.SourcesDirectory)/API/$(buildConfiguration)/bin'
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1

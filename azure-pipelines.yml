@@ -31,6 +31,9 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts'
   inputs:
-    pathtoPublish: '$(Build.SourcesDirectory)'
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
     artifactName: 'BuildArtifacts'
 
+- script: |
+      cd $(Build.ArtifactStagingDirectory)
+      dir

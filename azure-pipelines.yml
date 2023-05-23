@@ -6,10 +6,11 @@
 trigger:
 - master
 
-pool:
-  name: Default
-  demands:
-   - agent.name -equals DESKTOP-AGES7IT
+# pool:
+#   name: Default
+#   demands:
+#    - agent.name -equals DESKTOP-AGES7IT
+pool: 'windows-latest'
 
 variables:
   solution: '**/*.sln'
